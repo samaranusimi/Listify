@@ -10,6 +10,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -52,12 +53,37 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 20,
                   ),
-                  ElevatedButton(
-                      child: Text("Login"),
-                      style: TextButton.styleFrom(minimumSize: Size(150, 50)),
-                      onPressed: () {
-                        Navigator.pushNamed(context, MyRoutes.homeRoute);
-                      })
+                  InkWell(
+                    onTap: () {
+                      changeButton = true;
+                      setState(() {
+                        // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      });
+                    },
+                    child: Container(
+                      width: changeButton ? 50 : 150,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child: Text(
+                        "Login",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.brown,
+                          borderRadius:
+                              BorderRadius.circular(changeButton ? 50 : 8)),
+                    ),
+                  )
+
+                  // ElevatedButton(
+                  //     child: Text("Login"),
+                  //     style: TextButton.styleFrom(minimumSize: Size(150, 50)),
+                  //     onPressed: () {
+                  //       Navigator.pushNamed(context, MyRoutes.homeRoute);
+                  //     })
                 ],
               ),
             )
