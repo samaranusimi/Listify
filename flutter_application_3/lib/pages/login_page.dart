@@ -54,23 +54,30 @@ class _LoginPageState extends State<LoginPage> {
                     height: 20,
                   ),
                   InkWell(
-                    onTap: () {
-                      changeButton = true;
+                    onTap: () async {
                       setState(() {
-                        // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        changeButton = true;
                       });
+                      await Future.delayed(Duration(seconds: 1));
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
                     },
-                    child: Container(
+                    child: AnimatedContainer(
+                      duration: Duration(seconds: 1),
                       width: changeButton ? 50 : 150,
                       height: 50,
                       alignment: Alignment.center,
-                      child: Text(
-                        "Login",
-                        style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
+                      child: changeButton
+                          ? Icon(
+                              Icons.done,
+                              color: Colors.white,
+                            )
+                          : Text(
+                              "Login",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white),
+                            ),
                       decoration: BoxDecoration(
                           color: Colors.brown,
                           borderRadius:
