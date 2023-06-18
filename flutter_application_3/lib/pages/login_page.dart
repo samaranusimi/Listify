@@ -53,44 +53,40 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(
                     height: 20,
                   ),
-                  InkWell(
-                    onTap: () async {
-                      setState(() {
-                        changeButton = true;
-                      });
-                      await Future.delayed(Duration(seconds: 1));
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
-                    },
-                    child: AnimatedContainer(
-                      duration: Duration(seconds: 1),
-                      width: changeButton ? 50 : 150,
-                      height: 50,
-                      alignment: Alignment.center,
-                      child: changeButton
-                          ? Icon(
-                              Icons.done,
-                              color: Colors.white,
-                            )
-                          : Text(
-                              "Login",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ),
-                      decoration: BoxDecoration(
-                          color: Colors.brown,
-                          borderRadius:
-                              BorderRadius.circular(changeButton ? 50 : 8)),
+                  Material(
+                    color: Colors.brown,
+                    borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
+                    child: InkWell(
+                      onTap: () async {
+                        setState(() {
+                          changeButton = true;
+                        });
+                        await Future.delayed(Duration(seconds: 1));
+                        await Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        setState(() {
+                          changeButton = false;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        width: changeButton ? 50 : 150,
+                        height: 50,
+                        alignment: Alignment.center,
+                        child: changeButton
+                            ? Icon(
+                                Icons.done,
+                                color: Colors.white,
+                              )
+                            : Text(
+                                "Login",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                      ),
                     ),
-                  )
-
-                  // ElevatedButton(
-                  //     child: Text("Login"),
-                  //     style: TextButton.styleFrom(minimumSize: Size(150, 50)),
-                  //     onPressed: () {
-                  //       Navigator.pushNamed(context, MyRoutes.homeRoute);
-                  //     })
+                  ),
                 ],
               ),
             )
