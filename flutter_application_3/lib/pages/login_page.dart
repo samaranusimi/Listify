@@ -9,13 +9,11 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  
-   String name = "";
-   bool changeButton = false;
-   final _formKey = GlobalKey<FormState>();
+  String name = "";
+  bool changeButton = false;
+  final _formKey = GlobalKey<FormState>();
 
   moveToHome(BuildContext context) async {
-    if(_formKey.currentState.validate()){}
     setState(() {
       changeButton = true;
     });
@@ -24,7 +22,6 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       changeButton = false;
     });
-  }
   }
 
   @override
@@ -56,11 +53,11 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           hintText: "Enter Username", labelText: "Username"),
                       validator: (value) {
-                          if (value == null) {
-                            return "Username not found";
-                          }
+                        if (value == null) {
+                          return "Username not found";
+                        }
 
-                          return null;
+                        return null;
                       },
                       onChanged: (value) {
                         name = value;
@@ -74,15 +71,14 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: true,
                       decoration: InputDecoration(
                           hintText: "Enter Password", labelText: "Password"),
-                          validator: (value) {
-                          if (value == null) {
-                            return "Password not found";
-                          }
-                          else if(value.length < 6){
-                            return "Password must be of 6";
-                          }
+                      validator: (value) {
+                        if (value == null) {
+                          return "Password not found";
+                        } else if (value.length < 6) {
+                          return "Password must be of 6";
+                        }
 
-                          return null;
+                        return null;
                       },
                     ),
                     SizedBox(
