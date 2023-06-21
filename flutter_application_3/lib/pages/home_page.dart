@@ -9,7 +9,7 @@ class Home_Page extends StatelessWidget {
       appBar: AppBar(title: Text("My app")),
       body: Material(
         child: Center(
-          child: Container(child: Text("hello, ")),
+          child: Container(child: Text("hello, how are you")),
         ),
       ),
       drawer: Drawer(),
