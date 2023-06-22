@@ -9,7 +9,7 @@ class Home_Page extends StatelessWidget {
       appBar: AppBar(title: Text("Catalog App")),
       body: Material(
         child: Center(
-          child: Container(child: Text("hello, how are you")),
+          child: Container(child: Text("Welcome to learn flutter")),
         ),
       ),
       drawer: Drawer(),
