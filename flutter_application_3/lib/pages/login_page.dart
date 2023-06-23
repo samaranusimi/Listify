@@ -87,7 +87,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 20,
                     ),
                     Material(
-                      color: Colors.brown,
+                      color: Colors.purple,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
                       child: InkWell(
@@ -122,5 +122,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-
