@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
                       decoration: InputDecoration(
                           hintText: "Enter Password", labelText: "Password"),
                       validator: (value) {
-                        if (value== null) {
+                        if (value == null) {
                           return "Password not found";
                         } else if (value.length < 6) {
                           return "Password must be of 6";
