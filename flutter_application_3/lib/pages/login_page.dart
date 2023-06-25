@@ -1,27 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/utils/routes.dart';
 
-void main() => runApp(const MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    const appTitle = 'Form Validation Demo';
-
-    return MaterialApp(
-      title: appTitle,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(appTitle),
-        ),
-        body: const LoginPage(),
-      ),
-    );
-  }
-}
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -58,7 +37,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Image.asset(
                 "assets/images/log.png",
-                ,
+                fit: BoxFit.cover,
               ),
               SizedBox(
                 height: 20,
