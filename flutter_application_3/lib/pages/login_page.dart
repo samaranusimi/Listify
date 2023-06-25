@@ -1,21 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_3/utils/routes.dart';
-import 'package:flutter/foundation.dart';
 
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    const appTitle = 'Form Validation Demo';
+
+    return MaterialApp(
+      title: appTitle,
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text(appTitle),
+        ),
+        body: const LoginPage(),
+      ),
+    );
+  }
+}
 
 class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
+
   @override
-  _LoginPageState createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
-
   final _formKey = GlobalKey<FormState>();
 
   moveToHome(BuildContext context) async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       setState(() {
         changeButton = true;
       });
@@ -30,102 +50,96 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-        color: Colors.white,
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              children: [
-                Image.asset(
-                  "assets/images/hey.png",
-                  fit: BoxFit.cover,
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Text(
-                  "Welcome $name",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 16.0, horizontal: 32.0),
-                  child: Column(
-                    children: [
-                      TextFormField(
-                        decoration: InputDecoration(
-                          hintText: "Enter username",
-                          labelText: "Username",
-                        ),
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return "Username cannot be empty";
-                          }
+      color: Colors.white,
+      child: SingleChildScrollView(
+        child: Form(
+          key: _formKey,
+          child: Column(
+            children: [
+              Image.asset(
+                "assets/images/log.png",
+                ,
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Welcome $name",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 40.0, vertical: 18.0),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                          hintText: "Enter Username", labelText: "Username"),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Username not found";
+                        }
 
-                          return null;
-                        },
-                        onChanged: (value) {
-                          name = value;
-                          setState(() {});
-                        },
-                      ),
-                      TextFormField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          hintText: "Enter password",
-                          labelText: "Password",
-                        ),
-                        validator: (value) {
-                          if (value.isEmpty) {
-                            return "Password cannot be empty";
-                          } else if (value.length < 6) {
-                            return "Password length should be atleast 6";
-                          }
+                        return null;
+                      },
+                      onChanged: (value) {
+                        name = value;
+                        setState(() {});
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    TextFormField(
+                      obscureText: true,
+                      decoration: InputDecoration(
+                          hintText: "Enter Password", labelText: "Password"),
+                      validator: (value) {
+                        if (value!.isEmpty) {
+                          return "Password not found";
+                        } else if (value.length < 6) {
+                          return "Password must be of 6";
+                        }
 
-                          return null;
-                        },
-                      ),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                      Material(
-                        color: Colors.deepPurple,
-                        borderRadius:
-                            BorderRadius.circular(changeButton ? 50 : 8),
-                        child: InkWell(
-                          onTap: () => moveToHome(context),
-                          child: AnimatedContainer(
-                            duration: Duration(seconds: 1),
-                            width: changeButton ? 50 : 150,
-                            height: 50,
-                            alignment: Alignment.center,
-                            child: changeButton
-                                ? Icon(
-                                    Icons.done,
-                                    color: Colors.white,
-                                  )
-                                : Text(
-                                    "Login",
-                                    style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18),
-                                  ),
-                          ),
+                        return null;
+                      },
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Material(
+                      color: Colors.brown,
+                      borderRadius:
+                          BorderRadius.circular(changeButton ? 50 : 8),
+                      child: InkWell(
+                        onTap: () => moveToHome(context),
+                        child: AnimatedContainer(
+                          duration: Duration(seconds: 1),
+                          width: changeButton ? 50 : 150,
+                          height: 50,
+                          alignment: Alignment.center,
+                          child: changeButton
+                              ? Icon(
+                                  Icons.done,
+                                  color: Colors.white,
+                                )
+                              : Text(
+                                  "Login",
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
                         ),
                       ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
