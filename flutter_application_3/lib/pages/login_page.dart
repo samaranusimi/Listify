@@ -79,7 +79,6 @@ class _LoginPageState extends State<LoginPage> {
                         } else if (value.length < 6) {
                           return "Password must be of 6";
                         }
-
                         return null;
                       },
                     ),
