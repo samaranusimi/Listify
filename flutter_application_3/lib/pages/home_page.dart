@@ -12,17 +12,14 @@ class Home_Page extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Catalog App")),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),     
-          child: ListView.builder(
-            itemCount: CatalogModel.items.length,
-            itemBuilder: (context , index){
-              return ItemWidget(
-                item: CatalogModel.items[index]
-              );
-            },
-            
-          ),
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: CatalogModel.items.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(item: CatalogModel.items[index]);
+          },
         ),
+      ),
       drawer: MyDrawer(),
     );
   }
