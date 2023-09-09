@@ -2,12 +2,12 @@ class CatalogModel {
   static final items = [
     Item(
         id: 01,
-        name: "Macbook Air",
-        desc: "M1 chip",
+        name: "iPhone 12 Pro",
+        desc: "Apple iPhone 12th generation",
         price: 888,
         color: "#33505a",
         image:
-            'https://techcrunch.com/wp-content/uploads/2020/11/2020-11-16-074517497.jpg')
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc')
   ];
 }
 
