@@ -27,6 +27,9 @@ class _Home_PageState extends State<Home_Page> {
     var productData = decodedData["products"];
     CatalogModel.items =
         List.from(productData).map<Item>((item) => Item.fromMap(item)).toList();
+        setState(() {
+          
+        });
   }
 
   @override
