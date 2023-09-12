@@ -39,11 +39,31 @@ class _Home_PageState extends State<Home_Page> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-            ? ListView.builder(
+            ? GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16),
+                itemBuilder: (context, index) {
+                  final item = CatalogModel.items[index];
+                  return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: GridTile(
+                        header: Container(child: Text(item.name)),
+                        child: Image.network(item.image),
+                        footer: Text(item.price.toString()),
+                      ));
+                },
                 itemCount: CatalogModel.items.length,
-                itemBuilder: (context, index) =>
-                    ItemWidget(item: CatalogModel.items[index])
-                    )
+              )
+
+            // ? ListView.builder(
+            //     itemCount: CatalogModel.items.length,
+            //     itemBuilder: (context, index) =>
+            //         ItemWidget(item: CatalogModel.items[index])
+            //         )
             : Center(
                 child: CircularProgressIndicator(),
               ),
