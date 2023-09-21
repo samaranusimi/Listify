@@ -15,21 +15,23 @@ class home_details_page extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       bottomNavigationBar: Container(
         color: Colors.white,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
-            "\$${catalog.price}".text.xl2.bold.make(),
+            "\$${catalog.price}".text.xl3.bold.make(),
             ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor:
                             MaterialStatePropertyAll(MyTheme.darkBluish),
                         shape: MaterialStatePropertyAll(StadiumBorder())),
                     onPressed: () {},
-                    child: "Buy".text.xl2.make())
-                .wh(110, 55)
+                    child: "Add to Cart".text.xl2.make())
+                .wh(150, 60)
           ],
         ).p32(),
       ),
@@ -59,6 +61,12 @@ class home_details_page extends StatelessWidget {
                           .textStyle(context.captionStyle)
                           .xl2
                           .make(),
+                      10.heightBox,
+                      "With then or the doubting with of, scarce to before fluttered in. Spoken croaking but heart this on nevermore press"
+                          .text
+                          .lg
+                          .make()
+                          .p32(),
                     ],
                   ).py64(),
                 ),
@@ -71,9 +79,7 @@ class home_details_page extends StatelessWidget {
   }
 }
 
-            // catalog.name.text.xl6.extraBold.make().py4(),
-            // catalog.desc.text.xl3.semiBold.make().py12(),
-
+           
 // ButtonBar(
 //               alignment: MainAxisAlignment.spaceBetween,
 //               children: [
