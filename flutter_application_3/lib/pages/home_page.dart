@@ -42,7 +42,9 @@ class _Home_PageState extends State<Home_Page> {
       backgroundColor: context.canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () => Navigator.pushNamed(context, MyRoutes.cartRoute),
-        backgroundColor: MyTheme.buttonColor(context),
+        backgroundColor: Theme.of(context).brightness == Brightness.light
+            ? MyTheme.darkBluish
+            : MyTheme.lightdarkBluish,
         child: Icon(CupertinoIcons.cart),
       ),
       body: SafeArea(
@@ -63,3 +65,8 @@ class _Home_PageState extends State<Home_Page> {
     );
   }
 }
+
+// class ATheme {
+//   static Color lightdarkBluish = Vx.indigo500;
+//   static Color darkBluish = Color(0xff403b58);
+// }

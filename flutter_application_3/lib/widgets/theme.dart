@@ -8,7 +8,9 @@ class MyTheme {
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.white,
       canvasColor: creamColor,
-      buttonTheme: ButtonThemeData(buttonColor: darkBluish),
+      hintColor: darkBluish,
+      //  buttonColor:darkBluish,
+      // buttonTheme: ButtonThemeData(buttonColor: darkBluish),
       appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0.0,
@@ -17,10 +19,12 @@ class MyTheme {
               color: Colors.black, fontSize: 23, fontWeight: FontWeight.bold)));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
+        brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
         cardColor: Colors.black,
         canvasColor: darkcreamColor,
-        buttonColor:lightdarkBluish,
+        hintColor: Colors.white,
+        // buttonColor:lightdarkBluish,
         // buttonTheme: ButtonThemeData(buttonColor: lightdarkBluish),
         appBarTheme: AppBarTheme(
             color: Colors.black,
@@ -34,8 +38,13 @@ class MyTheme {
 
   static Color creamColor = Color(0xfff5f5f5);
   static Color darkcreamColor = Vx.gray800;
+  static Color lightdarkBluish = Vx.indigo500;
   static Color darkBluish = Color(0xff403b58);
-  static Color lightdarkBluish = Vx.red400;
 
-  static buttonColor(BuildContext context) {}
+  // static buttonColor(BuildContext context) {}
+  // static Color floatingActionButtonColor(BuildContext context) {
+  //   return ThemeData.estimateBrightnessForColor == Brightness.dark
+  //       ? lightdarkBluish
+  //       : darkBluish;
+  // }
 }
