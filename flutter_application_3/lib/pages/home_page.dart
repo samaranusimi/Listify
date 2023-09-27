@@ -45,7 +45,7 @@ class _Home_PageState extends State<Home_Page> {
         backgroundColor: Theme.of(context).brightness == Brightness.light
             ? MyTheme.darkBluish
             : MyTheme.lightdarkBluish,
-        child: Icon(CupertinoIcons.cart),
+        child: Icon(CupertinoIcons.cart, color: Colors.white),
       ),
       body: SafeArea(
         child: Container(

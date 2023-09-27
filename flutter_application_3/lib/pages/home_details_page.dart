@@ -14,16 +14,16 @@ class home_details_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
       ),
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           children: [
-            "\$${catalog.price}".text.xl3.bold.make(),
+            "\$${catalog.price}".text.xl2.bold.make(),
             ElevatedButton(
                     style: ButtonStyle(
                         backgroundColor:
@@ -31,7 +31,7 @@ class home_details_page extends StatelessWidget {
                         shape: MaterialStatePropertyAll(StadiumBorder())),
                     onPressed: () {},
                     child: "Add to Cart".text.xl2.make())
-                .wh(150, 75)
+                .wh(150, 50)
           ],
         ).p32(),
       ),
@@ -44,33 +44,31 @@ class home_details_page extends StatelessWidget {
                     child: Image.network(catalog.image))
                 .h32(context),
             Expanded(
-              child: SingleChildScrollView(
-                child: VxArc(
-                  height: 20,
-                  edge: VxEdge.top,
-                  arcType: VxArcType.convey,
-                  child: Container(
-                    color: Colors.white,
-                    width: context.screenWidth,
-                    child: Column(
-                      children: [
-                        catalog.name.text.bold.xl3
-                            .color(MyTheme.darkBluish)
-                            .make(),
-                        20.heightBox,
-                        catalog.desc.text.semiBold
-                            .textStyle(context.captionStyle)
-                            .xl2
-                            .make(),
-                        10.heightBox,
-                        "With then or the doubting with of, scarce to before fluttered in. Spoken croaking but heart this on nevermore press"
-                            .text
-                            .lg
-                            .make()
-                            .p32(),
-                      ],
-                    ).py64(),
-                  ),
+              child: VxArc(
+                height: 20,
+                edge: VxEdge.top,
+                arcType: VxArcType.convey,
+                child: Container(
+                  color: context.cardColor,
+                  width: context.screenWidth,
+                  child: Column(
+                    children: [
+                      catalog.name.text.bold.xl3
+                          .color(MyTheme.darkBluish)
+                          .make(),
+                      20.heightBox,
+                      catalog.desc.text.semiBold
+                          .textStyle(context.captionStyle)
+                          .xl2
+                          .make(),
+                      10.heightBox,
+                      "With then or the doubting with of, scarce to before fluttered in. Spoken croaking but heart this on nevermore press"
+                          .text
+                          .lg
+                          .make()
+                          .p32(),
+                    ],
+                  ).py64(),
                 ),
               ),
             )
