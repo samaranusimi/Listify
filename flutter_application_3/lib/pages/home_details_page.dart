@@ -26,14 +26,16 @@ class home_details_page extends StatelessWidget {
             "\$${catalog.price}".text.xl2.bold.make(),
             ElevatedButton(
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStatePropertyAll(MyTheme.darkBluish),
+                        backgroundColor: MaterialStatePropertyAll(
+                            Theme.of(context).brightness == Brightness.dark
+                                ? MyTheme.lightdarkBluish
+                                : MyTheme.darkBluish),
                         shape: MaterialStatePropertyAll(StadiumBorder())),
                     onPressed: () {},
                     child: "Add to Cart".text.xl2.make())
                 .wh(150, 50)
           ],
-        ).p32(),
+        ).p16(),
       ),
       body: SafeArea(
         bottom: false,
