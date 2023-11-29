@@ -71,7 +71,6 @@
             "price": 599,
             "color": "#7c95eb",
             "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT3Q3ref_VW_34FR+watch-case-45-aluminum-silver-nc-s9_VW_34FR+watch-face-45-aluminum-silver-s9_VW_34FR_WF_CO?wid=752&hei=720&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=VGhSS0g2WFFuQ1NDd2xwd1MrR3QzWE0zNmJwS21GSEN1QlZhZzcwZ0NZbEljRjVjb3RBRUI2RzdxR2VyMW04MnJUamJnejRPUisxcE0vUVlzaFBXN2tkNGpsUS9ETU41eFQ0TzIrUnpZdCtsYjI5NDJBZGlORUpCVzdjSjNqWlh3ek1lK3lIK0NHNEdMUEdoT2x5bmIzZmdHMUt6VFlqa3BpV2VBOUNycGdrcDIxSk5peW5HTWQ0c004MmJwMkNtdGl6SHg4ZE5NYmlWSVQ5akRTdGpCZnNkUDVMK1NmbU9SYkx1ZjRzUDExcz0"
-            
         },
         {
             "id": 10,
@@ -88,6 +87,14 @@
             "price": 2099,
             "color": "#e0bfae",
             "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1683209823/Croma%20Assets/Computers%20Peripherals/Desktops/Images/228272_0_jjloch.png?tr=w-600"
+        },
+        {
+            "id": 11,
+            "name": "Mi Power Bank",
+            "desc": "Mi Power Bank 3 10000 mAh",
+            "price": 199,
+            "color": "#e0bfae",
+            "image": "https://imgs.search.brave.com/1_jkp1VkeBElQjRgvLek4B_CNqxViMKjGmlxhSWU1rQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9taXN0/b3JlLnBrL2Nkbi9z/aG9wL3Byb2R1Y3Rz/LzEwMDAwbUFoLU1p/LVBvd2VyLUJhbmst/My1Db21wYWN0XzMw/MHgucG5nP3Y9MTYx/NjYxMzg5Mg"
         }
     ]
 }
