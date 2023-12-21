@@ -87,22 +87,6 @@
             "price": 2099,
             "color": "#e0bfae",
             "image": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1683209823/Croma%20Assets/Computers%20Peripherals/Desktops/Images/228272_0_jjloch.png?tr=w-600"
-        },
-        {
-            "id": 11,
-            "name": "Mi Power Bank",
-            "desc": "Mi Power Bank 3 10000 mAh",
-            "price": 199,
-            "color": "#e0bfae",
-            "image": "https://imgs.search.brave.com/1_jkp1VkeBElQjRgvLek4B_CNqxViMKjGmlxhSWU1rQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9taXN0/b3JlLnBrL2Nkbi9z/aG9wL3Byb2R1Y3Rz/LzEwMDAwbUFoLU1p/LVBvd2VyLUJhbmst/My1Db21wYWN0XzMw/MHgucG5nP3Y9MTYx/NjYxMzg5Mg"
-        },
-        {
-            "id": 12,
-            "name": "boAT Headphone",
-            "desc": "boAt BassHeads 900 Wired Headset",
-            "price": 99,
-            "color": "#et7t7t7",
-            "image": "https://imgs.search.brave.com/lBF7Da8d_NFKzfjanHe5APO9ql2Re5Wf074VgdEx9SY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9ydWtt/aW5pbTIuZmxpeGNh/cnQuY29tL2ltYWdl/LzMwMC8zMDAvazB2/Ymd5ODBwa3JyZGov/aGVhZHBob25lLzYv/Yi85L2JvYXQtYmFz/c2hlYWRzLTkwMC1z/dXBlci1leHRyYS1i/YXNzLW9yaWdpbmFs/LWltYWZnOTZ5ZHU0/Z2V0ejcuanBlZz9x/PTkw"
         }
     ]
 }

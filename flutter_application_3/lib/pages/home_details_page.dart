@@ -32,7 +32,7 @@ class home_details_page extends StatelessWidget {
                                 : MyTheme.darkBluish),
                         shape: MaterialStatePropertyAll(StadiumBorder())),
                     onPressed: () {},
-                    child: "Add to Cart".text.xl2.make())
+                    child: "Add to Cart".text.xl.make())
                 .wh(150, 50)
           ],
         ).p16(),
@@ -50,27 +50,29 @@ class home_details_page extends StatelessWidget {
                 height: 20,
                 edge: VxEdge.top,
                 arcType: VxArcType.convey,
-                child: Container(
-                  color: context.cardColor,
-                  width: context.screenWidth,
-                  child: Column(
-                    children: [
-                      catalog.name.text.bold.xl3
-                          .color(MyTheme.darkBluish)
-                          .make(),
-                      20.heightBox,
-                      catalog.desc.text.semiBold
-                          .textStyle(context.captionStyle)
-                          .xl2
-                          .make(),
-                      10.heightBox,
-                      "With then or the doubting with of, scarce to before fluttered in. Spoken croaking but heart this on nevermore press"
-                          .text
-                          .lg
-                          .make()
-                          .p32(),
-                    ],
-                  ).py64(),
+                child: SingleChildScrollView(
+                  child: Container(
+                    color: context.cardColor,
+                    width: context.screenWidth,
+                    child: Column(
+                      children: [
+                        catalog.name.text.bold.xl3
+                            .color(MyTheme.darkBluish)
+                            .make(),
+                        20.heightBox,
+                        catalog.desc.text.semiBold
+                            .textStyle(context.captionStyle)
+                            .xl2
+                            .make(),
+                        10.heightBox,
+                        "With then or the doubting with of, scarce to before fluttered in. Spoken croaking but heart this on nevermore press"
+                            .text
+                            .lg
+                            .make()
+                            .p32(),
+                      ],
+                    ).py64(),
+                  ),
                 ),
               ),
             )
